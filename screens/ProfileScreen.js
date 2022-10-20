@@ -1,21 +1,8 @@
 import { Text, View } from "react-native";
+import Title from "../components/Title";
 
 function ProfileScreen() {
-  return (
-    <View>
-      <Text
-        style={{
-          textAlign: "center",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: 26,
-          fontWeight: "bold",
-        }}
-      >
-        Profile Screen
-      </Text>
-    </View>
-  );
+  return <Title> Profile </Title>;
 }
 
 export default ProfileScreen;
