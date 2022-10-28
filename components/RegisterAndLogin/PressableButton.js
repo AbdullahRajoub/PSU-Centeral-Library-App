@@ -1,15 +1,15 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
 
-function MyButton({ children, onPress, style, Flate, textStyle }) {
+function PressableButton({ children, onPress, style, Flate }) {
   const isFlate = !!Flate;
   return (
-    <View style={[style]}>
+    <View style={styles.Contianer}>
       <Pressable
         onPress={onPress}
         style={({ pressed }) => [pressed && styles.pressed, styles.Pressable]}
       >
         <View style={[styles.buttonContainer, isFlate && styles.Flat]}>
-          <Text style={[styles.Text, isFlate && styles.TextFlat, textStyle]}>
+          <Text style={[styles.Text, isFlate && styles.TextFlat]}>
             {children}
           </Text>
         </View>
@@ -17,20 +17,27 @@ function MyButton({ children, onPress, style, Flate, textStyle }) {
     </View>
   );
 }
-export default MyButton;
+export default PressableButton;
 const styles = StyleSheet.create({
+  Contianer: {
+    alignItems: "center",
+  },
   buttonContainer: {
+    borderRadius: 15,
     backgroundColor: "#FFA920",
+    padding: 12,
+    width: 130,
   },
   Flat: {
     backgroundColor: "transparent",
   },
   Text: {
     fontWeight: "bold",
-    color: "white",
+    color: "#FAFAFA",
+    textAlign: "center",
   },
   TextFlat: {
-    color: "#FFA920",
+    color: "blue",
   },
   pressed: {
     opacity: 0.75,
